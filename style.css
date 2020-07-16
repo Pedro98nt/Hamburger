@@ -1,0 +1,160 @@
+h1.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+    font-size: 14px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .toggle {
+    display: block;
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin: 20px 20px 0 0;
+    position: relative;
+    transition: .5s;
+    z-index: 2;
+  }
+  .toggle.on {
+    transform: rotate(45deg);
+    transform-style: preserve-3d;
+  }
+  .toggle:hover > .bar {
+    background: red;
+    transition: .5s;
+  }
+  .toggle > .top {
+    top: 0px;
+  }
+  .toggle > .top.active {
+    top: 7px;
+  }
+  .toggle > .center.active {
+    transform: rotate(450deg);
+    transform-style: preserve-3d;
+  }
+  .toggle > .bottom {
+    bottom: 0px;
+  }
+  .toggle > .bottom.active {
+    bottom: 7px;
+  }
+  
+  .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ccc;
+    margin: 3px auto;
+    background: #000;
+    position: relative;
+    transition: 1s;
+  }
+  .bar.active {
+    background: white;
+  }
+  
+  nav {
+    height: 0;
+    width: 0;
+    position: absolute;
+    background: #333;
+    transition: .5s;
+    overflow: hidden;
+  }
+  nav.mm {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  nav .nav-item {
+    border-bottom: 1px solid #444;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  nav .nav-item a {
+    display: block;
+    padding: 12px;
+    background: #333;
+    color: #ccc;
+  }
+  nav .nav-item:first-of-type {
+    border-top: 1px solid #444;
+  }
+  nav .sub-nav {
+    margin: 0;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    transition: .5s;
+  }
+  nav .sub-nav.expand {
+    max-height: 600px;
+  }
+  nav .sub-nav .nav-item a {
+    color: #333;
+    background: #ccc;
+  }
+  nav .sub-nav .nav-item:first-of-type {
+    border-top: 0;
+  }
+  
+  p.subtoggle {
+    display: block;
+    position: absolute;
+    margin: 0;
+    right: 10px;
+    top: 0;
+    height: 100%;
+    padding-top: 10px;
+    width: 45px;
+    float: right;
+    z-index: 3;
+    transition: .5s;
+  }
+  p.subtoggle.on span:first-child {
+    transform: rotate(180deg);
+    transform-style: preserve-3d;
+  }
+  
+  p.subtoggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    width: 15px;
+    background: #ccc;
+    margin: 3px auto;
+    background: #666;
+    position: relative;
+    transition: 1s;
+  }
+  p.subtoggle span:first-child {
+    transform: rotate(90deg);
+    transform-style: preserve-3d;
+    top: 6px;
+  }
+  
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: #444;
+  }
+  h1.center {
+    color: #ccc;
+  }
+  
+  nav h1 {
+    padding: 18px 12px;
+  }
